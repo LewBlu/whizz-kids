@@ -13,7 +13,9 @@ class RotaController {
 			'totalDaysInMonth' => date('t', strtotime($date)),
 			'daysToSkip' => $totalDaysToSkip,
 			'totalRows' => ceil((date('t', strtotime($date))+$totalDaysToSkip)/7),
-			'calendarHeader' => date('F Y', strtotime($date))
+			'calendarHeader' => date('F Y', strtotime($date)),
+			'next' => date('Y-m-d', strtotime('+1 month', strtotime($date))),
+			'previous' => date('Y-m-d', strtotime('-1 month', strtotime($date)))
 		];
 		return $data;
 	}
