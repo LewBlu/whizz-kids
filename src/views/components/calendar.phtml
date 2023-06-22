@@ -1,0 +1,36 @@
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th colspan="7" class="text-center"><?=$calendarHeader?></th>
+		</tr>
+		<tr>
+			<th class="text-center">Sun</th>
+			<th class="text-center">Mon</th>
+			<th class="text-center">Tue</th>
+			<th class="text-center">Wed</th>
+			<th class="text-center">Thu</th>
+			<th class="text-center">Fri</th>
+			<th class="text-center">Sat</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php 
+			$currentDateNumber = 1;
+			for($count = 0; $count < $totalRows; $count++) { ?>
+		<tr>
+		<?php for($dayCount = 0; $dayCount < 7; $dayCount++) {
+				if($daysToSkip != 0 || $currentDateNumber == 0) {
+					$daysToSkip--;
+		?>
+					<td class="bg-secondary"></td>
+		<?php 	} else { ?>
+					<td><?=$currentDateNumber?></td>
+		<?php 
+				$currentDateNumber = ($currentDateNumber == $totalDaysInMonth || $daysToSkip > 0 ? 0 : $currentDateNumber+1);
+				}
+			}
+		?>
+		</tr>
+		<?php } ?>
+	</tbody>
+</table>

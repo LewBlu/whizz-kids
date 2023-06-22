@@ -18,4 +18,12 @@ $app->get('/', function (Request $request, Response $response, array $args) {
 	return $renderer->render($response, "landing.phtml");
 });
 
+$app->get('/rota[/{date}]', function(Request $request, Response $response, array $args) {
+	$renderer = new PhpRenderer('src/views');
+	$RotaController = new WhizzKids\Controller\RotaController();
+	$date = (isset($args['date']) ? $args['date'] : null);
+	$data = $RotaController->getCalendarConfiguration($date);
+	return $renderer->render($response, "rota.phtml", $data);
+});
+
 $app->run();
