@@ -2,6 +2,14 @@ body {
 	height: 100vh;
 }
 
+/* -------------------------------------------------------------------------- */
+/*                               Calendar Styles                              */
+/* -------------------------------------------------------------------------- */
 th, td {
 	width: calc(100% / 7);
+}
+
+td.calendar-date:hover {
+	background-color: var(--bs-light);
+	cursor: pointer;
 }

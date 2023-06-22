@@ -1,7 +1,13 @@
 <table class="table table-bordered">
 	<thead>
 		<tr>
-			<th colspan="7" class="text-center"><?=$calendarHeader?></th>
+			<th colspan="7" class="bg-light">
+				<div class="d-flex justify-content-between align-items-center">
+					<button class="btn btn-sm btn-secondary" data-date="<?=$previous?>"><</button>
+					<?=$calendarHeader?>
+					<button class="btn btn-sm btn-secondary" data-date="<?=$next?>">></button>
+				</div>
+			</th>
 		</tr>
 		<tr>
 			<th class="text-center">Sun</th>
@@ -22,9 +28,9 @@
 				if($daysToSkip != 0 || $currentDateNumber == 0) {
 					$daysToSkip--;
 		?>
-					<td class="bg-secondary"></td>
+					<td class="calendar-date"></td>
 		<?php 	} else { ?>
-					<td><?=$currentDateNumber?></td>
+					<td class="calendar-date <?=(date("Y-m-d") == date('Y-m-'.$currentDateNumber) ? 'bg-info': '')?>"><?=$currentDateNumber?></td>
 		<?php 
 				$currentDateNumber = ($currentDateNumber == $totalDaysInMonth || $daysToSkip > 0 ? 0 : $currentDateNumber+1);
 				}
