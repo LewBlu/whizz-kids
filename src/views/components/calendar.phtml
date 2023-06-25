@@ -30,7 +30,7 @@
 		?>
 					<td class="calendar-date"></td>
 		<?php 	} else { ?>
-					<td class="calendar-date <?=(date("Y-m-d") == date('Y-m-'.$currentDateNumber) ? 'bg-info': '')?>"><?=$currentDateNumber?></td>
+					<td class="calendar-date <?=(date("Y-m-d") == substr($selectedDate, 0, -2).$currentDateNumber ? 'bg-info': '')?>"><?=$currentDateNumber?></td>
 		<?php 
 				$currentDateNumber = ($currentDateNumber == $totalDaysInMonth || $daysToSkip > 0 ? 0 : $currentDateNumber+1);
 				}

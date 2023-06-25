@@ -10,6 +10,7 @@ class RotaController {
 		$totalDaysToSkip = date('w', strtotime($firstDateOfMonth));
 		
 		$data = [
+			'selectedDate' => $date,
 			'totalDaysInMonth' => date('t', strtotime($date)),
 			'daysToSkip' => $totalDaysToSkip,
 			'totalRows' => ceil((date('t', strtotime($date))+$totalDaysToSkip)/7),
