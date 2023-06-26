@@ -28,10 +28,9 @@ $app->get('/rota[/{date}]', function(Request $request, Response $response, array
 
 $app->get('/register', function (Request $request, Response $response, array $args) {
 	$renderer = new PhpRenderer('src/views');
-    // $name = $args['name'];
-    // $response->getBody()->write("Hello");
-    // return $response;
-	return $renderer->render($response, "register.phtml");
+	$RegisterController = new WhizzKids\Controller\RegisterController();
+	$data = $RegisterController->getRegister();
+	return $renderer->render($response, "register.phtml", $data);
 });
 
 $app->run();

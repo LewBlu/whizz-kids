@@ -9,70 +9,12 @@
 				Breakfast Club
 			</div>
 			<ul class="list-group list-group-flush d-flex flex-grow-1" style="height:0px; overflow-y: scroll;">
+				<?php foreach($data['breakfast_club'] as $child) { ?>
 				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 1
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
+					<?=$child['name'];?>
+					<button type="button" class="btn btn-sm <?=($child['present'] ? 'btn-success' : 'btn-outline-success')?>"><i class="fa-solid fa-check"></i></button>
 				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 2
-					<button type="button" class="btn btn-sm btn-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 3
-					<button type="button" class="btn btn-sm btn-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 4
-					<button type="button" class="btn btn-sm btn-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 5
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 6
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 7
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 8
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 9
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 10
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 11
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 12
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 13
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 14
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 15
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 16
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
+				<?php } ?>
 			</ul>
 		</div>
 		<div class="card flex-fill mx-3">
@@ -80,106 +22,12 @@
 				Toast Club
 			</div>
 			<ul class="list-group list-group-flush d-flex flex-grow-1" style="height:0px; overflow-y: auto;">
+				<?php foreach($data['toast_club'] as $child) { ?>
 				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 1
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
+					<?=$child['name'];?>
+					<button type="button" class="btn btn-sm <?=($child['present'] ? 'btn-success' : 'btn-outline-success')?>"><i class="fa-solid fa-check"></i></button>
 				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 2
-					<button type="button" class="btn btn-sm btn-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 3
-					<button type="button" class="btn btn-sm btn-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 4
-					<button type="button" class="btn btn-sm btn-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 5
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 6
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 7
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 8
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 9
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 10
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 11
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 12
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 13
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 14
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 15
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 16
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 14
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 15
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 16
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 14
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 15
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 16
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 14
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 15
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 16
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
+				<?php } ?>
 			</ul>
 		</div>
 		<div class="card flex-fill">
@@ -187,34 +35,12 @@
 				After School Club
 			</div>
 			<ul class="list-group list-group-flush d-flex flex-grow-1" style="height:0px; overflow-y: auto;">
+				<?php foreach($data['after_school_club'] as $child) { ?>
 				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 1
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
+					<?=$child['name'];?>
+					<button type="button" class="btn btn-sm <?=($child['present'] ? 'btn-success' : 'btn-outline-success')?>"><i class="fa-solid fa-check"></i></button>
 				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 2
-					<button type="button" class="btn btn-sm btn-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 3
-					<button type="button" class="btn btn-sm btn-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 4
-					<button type="button" class="btn btn-sm btn-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 5
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 6
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					User 7
-					<button type="button" class="btn btn-sm btn-outline-success"><i class="fa-solid fa-check"></i></button>
-				</li>
+				<?php } ?>
 			</ul>
 		</div>
 	</div>
