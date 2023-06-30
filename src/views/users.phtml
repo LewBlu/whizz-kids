@@ -1,0 +1,31 @@
+<?php include 'src/views/layouts/header.phtml'; ?>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 d-flex flex-column">
+	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
+		<h1 class="h2">Users</h1>
+	</div>
+	<div class="d-flex">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Firstname</th>
+					<th>Surname</th>
+					<th>Email Address</th>
+					<th>Contact Number</th>
+					<th>Account Active</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php foreach($data as $account) { ?>
+				<tr>
+					<td><?=$account['firstname']?></td>
+					<td><?=$account['surname']?></td>
+					<td><?=$account['email']?></td>
+					<td><?=$account['telephone']?></td>
+					<td><?=($account['active'] ? 'Yes' : 'No')?></td>
+				</tr>
+				<?php } ?>
+			</tbody>
+		</table>
+	</div>
+</main>
+<?php include 'src/views/layouts/footer.phtml'; ?>

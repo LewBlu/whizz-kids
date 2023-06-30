@@ -40,4 +40,11 @@ $app->get('/accounts', function (Request $request, Response $response, array $ar
 	return $renderer->render($response, "accounts.phtml", $data);
 });
 
+$app->get('/users', function (Request $request, Response $response, array $args) {
+	$renderer = new PhpRenderer('src/views');
+	$UserController = new WhizzKids\Controller\UserController();
+	$data = $UserController->getUsers();
+	return $renderer->render($response, "users.phtml", $data);
+});
+
 $app->run();
