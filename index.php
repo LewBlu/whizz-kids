@@ -33,4 +33,11 @@ $app->get('/register', function (Request $request, Response $response, array $ar
 	return $renderer->render($response, "register.phtml", $data);
 });
 
+$app->get('/accounts', function (Request $request, Response $response, array $args) {
+	$renderer = new PhpRenderer('src/views');
+	$AccountsController = new WhizzKids\Controller\AccountsController();
+	$data = $AccountsController->getAccounts();
+	return $renderer->render($response, "accounts.phtml", $data);
+});
+
 $app->run();
