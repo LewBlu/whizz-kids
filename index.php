@@ -30,8 +30,8 @@ $app->get('/rota[/{date}]', function(Request $request, Response $response, array
 
 $app->get('/register', function (Request $request, Response $response, array $args) {
 	$renderer = new PhpRenderer('src/views');
-	$RegisterController = new WhizzKids\Controller\RegisterController();
-	$data = $RegisterController->getRegister();
+	$BookingsController = new WhizzKids\Controller\BookingsController();
+	$data = $BookingsController->getRegister();
 	return $renderer->render($response, "register.phtml", $data);
 });
 

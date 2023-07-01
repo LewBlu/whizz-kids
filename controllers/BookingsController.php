@@ -1,11 +1,11 @@
 <?php
 namespace WhizzKids\Controller;
 
-class RegisterController {
+class BookingsController {
 	public function __construct() {}
 
-	public function getRegister($date = null) {
-		$data = [
+	public function getRegister() {
+		$bookings = [
 			'breakfast_club' => [
 				['name' => 'Lewis', 'present' => 1],
 				['name' => 'Liam', 'present' => 0],
@@ -29,6 +29,6 @@ class RegisterController {
 				['name' => 'Charlotte', 'present' => 0],
 			]
 		];
-		return $data;
+		return $bookings;
 	}
 }
