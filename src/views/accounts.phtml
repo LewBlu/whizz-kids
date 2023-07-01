@@ -15,13 +15,19 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach($data as $account) { ?>
+				<?php if(!empty($data)) { ?>
+					<?php foreach($data as $account) { ?>
+					<tr>
+						<td><?=$account['forename']?></td>
+						<td><?=$account['surname']?></td>
+						<td><?=$account['guardian']?></td>
+						<td><?=$account['telephone']?></td>
+						<td>£<?=$account['balance']?></td>
+					</tr>
+					<?php } ?>
+				<?php } else { ?>
 				<tr>
-					<td><?=$account['forename']?></td>
-					<td><?=$account['surname']?></td>
-					<td><?=$account['guardian']?></td>
-					<td><?=$account['telephone']?></td>
-					<td>£<?=$account['balance']?></td>
+					<td colspan="5">No accounts</td>
 				</tr>
 				<?php } ?>
 			</tbody>

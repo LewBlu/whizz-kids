@@ -3,7 +3,8 @@
 	"type": "project",
 	"autoload": {
 		"psr-4": {
-			"WhizzKids\\Controller\\": "controllers/"
+			"WhizzKids\\Controller\\": "controllers/",
+			"WhizzKids\\Model\\": "models/"
 		}
 	},
 	"authors": [
