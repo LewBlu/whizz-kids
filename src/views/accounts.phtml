@@ -2,7 +2,7 @@
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 d-flex flex-column">
 	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
 		<h1 class="h2">Accounts</h1>
-		<button type="button" class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
+		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addAccountModal"><i class="fa-solid fa-plus"></i></button>
 	</div>
 	<div class="d-flex">
 		<table class="table table-hover">
@@ -35,4 +35,59 @@
 		</table>
 	</div>
 </main>
+<!-- Modal -->
+<div class="modal fade" id="addAccountModal" tabindex="-1" aria-labelledby="addAccountModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+        		<h1 class="modal-title fs-5" id="addAccountModalLabel">Add Account</h1>
+        		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      		</div>
+      		<div class="modal-body">
+				<form action="/accounts/new" method="POST" id="new-account-form"class="row g-3">
+					<div class="col-6">
+						<label for="forename" class="form-label">Forename</label>
+						<input type="text" class="form-control" id="forename" name="forename">
+					</div>
+					<div class="col-6">
+						<label for="surname" class="form-label">Surname</label>
+						<input type="text" class="form-control" id="surname" name="surname">
+					</div>
+					<div class="col-12">
+						<label for="guardian" class="form-label">Guardian</label>
+						<input type="text" class="form-control" id="guardian" name="guardian">
+					</div>
+					<div class="col-12">
+						<label for="contact_number" class="form-label">Contact Number</label>
+						<input type="telephone" class="form-control" id="contact_number" name="contact_number">
+					</div>
+					<div class="col-12 d-flex justify-content-between">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Save changes</button>
+					</div>
+				</form>
+			</div>
+    	</div>
+  	</div>
+</div>
+<script>
+document.getElementById("new-account-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  submitAccountForm(e.target);
+});
+
+function submitAccountForm(form) {
+	const formData = new FormData(form);
+	let data = Object.fromEntries(formData);
+
+	fetch('/accounts/new', {
+		method: 'POST',
+		headers: {
+			'Accept': 'application/json',
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(data)
+	}).then(response => response.json()).then(response => console.log(JSON.stringify(response)));
+}
+</script>
 <?php include 'src/views/layouts/footer.phtml'; ?>

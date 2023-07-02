@@ -10,13 +10,11 @@ $dotenv->load();
 
 $app = AppFactory::create();
 
+$app->addBodyParsingMiddleware();
 $app->addErrorMiddleware(true, false, false);
 
 $app->get('/', function (Request $request, Response $response, array $args) {
 	$renderer = new PhpRenderer('src/views');
-    // $name = $args['name'];
-    // $response->getBody()->write("Hello");
-    // return $response;
 	return $renderer->render($response, "landing.phtml");
 });
 
@@ -40,6 +38,22 @@ $app->get('/accounts', function (Request $request, Response $response, array $ar
 	$AccountsController = new WhizzKids\Controller\AccountsController();
 	$data = $AccountsController->getAccounts();
 	return $renderer->render($response, "accounts.phtml", $data);
+});
+
+$app->post('/accounts/new', function (Request $request, Response $response, array $args) {
+	$data = $request->getParsedBody();
+	if(!empty($data)) {
+		$AccountsController = new WhizzKids\Controller\AccountsController();
+		$new_account = $AccountsController->createAccount($data);
+		if($new_account['success']) {
+			$response->getBody()->write(json_encode($new_account));
+			return $response;
+		}
+		$response->getBody()->write(json_encode($new_account));
+		return $response->withStatus(507);
+	}
+	$response->getBody()->write(json_encode(['message' => 'Required data not received']));
+	return $response->withStatus(422);
 });
 
 $app->get('/users', function (Request $request, Response $response, array $args) {

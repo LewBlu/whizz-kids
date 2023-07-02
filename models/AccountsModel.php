@@ -23,4 +23,16 @@ class AccountsModel {
 		mysqli_close($this->conn);
 		return $accounts;
 	}
+
+	public function createAccount($account_data) {
+		$stmt = mysqli_stmt_init($this->conn);
+		mysqli_stmt_prepare($stmt, "INSERT INTO accounts(forename, surname, guardian, telephone) VALUES (?,?,?,?)");
+		mysqli_stmt_bind_param($stmt, "ssss", $account_data['forename'], $account_data['surname'],$account_data['guardian'],$account_data['contact_number']);
+		mysqli_stmt_execute($stmt);
+		$id = mysqli_insert_id($this->conn);
+		if($id) {
+			return ['success' => true, 'account_id' => $id];
+		}
+		return ['success' => false, 'message' => 'An error occured when attempting to create the account'];
+	}
 }
